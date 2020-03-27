@@ -17,27 +17,19 @@ void Init() {
 			while (!fin.eof()) {	
 				Quiz getQuiz;
 				getline(fin,getQuiz.Tittle);
-				cout << getQuiz.Tittle << endl;
 				if (getQuiz.Tittle != "") {
 					fin >> getQuiz.Count_Question;
-					cout << getQuiz.Count_Question << endl;
-
 					getQuiz.Questions = new Question[getQuiz.Count_Question];
 					for (int i = 0; i < getQuiz.Count_Question; i++) {
 						fin.ignore(1321312, '\n');
 						getline(fin, getQuiz.Questions[i].question);
-						cout << getQuiz.Questions[i].question << endl;
 						fin >> getQuiz.Questions[i].Count_Answer;
-						cout << getQuiz.Questions[i].Count_Answer<<endl;
 						getQuiz.Questions[i].answer = new string[getQuiz.Questions[i].Count_Answer];
 						getQuiz.Questions[i].Correct_answer = new bool[getQuiz.Questions[i].Count_Answer];
-
 						for (int j = 0; j < getQuiz.Questions[i].Count_Answer; j++) {
 							fin.ignore(13123, '\n');
 							getline(fin, getQuiz.Questions[i].answer[j]);
-							cout << getQuiz.Questions[i].answer[j] << endl;
 							fin >> getQuiz.Questions[i].Correct_answer[j];
-							cout << getQuiz.Questions[i].Correct_answer[j]<<endl;
 						}
 					}
 					fin.ignore(12323, '\n');
