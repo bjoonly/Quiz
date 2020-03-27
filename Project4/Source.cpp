@@ -30,9 +30,6 @@ int main() {
 			SLEEP;
 		}
 	} while (action != 4);
-	TakeTheQuiz();
-	AddNewQuiz();
-	TakeTheQuiz();
 
 	return 0;
 }
